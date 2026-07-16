@@ -1,0 +1,37 @@
+# Archivos de sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Archivos de editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.vim/
+
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+*.bak
+
+# Directorios de dependencias
+node_modules/
+venv/
+.venv/
+
+# Backups de configuración
+*.backup
+*.orig
+*.rej
+
+# Archivos personales (no compartir)
+personal-config/
+secrets/
+.env
