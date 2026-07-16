@@ -1,0 +1,2 @@
+# arch-bspwm-setup
+Instalación 
