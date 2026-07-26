@@ -196,8 +196,8 @@ declare -a PACKAGES_UTILS=(
 declare -a PACKAGES_APPEARANCE=(
     "feh"
     "lxappearance"
-    "arc-gtk-theme"
-    "papirus-icon-theme"
+    "orchis-theme"
+    "sudo pacman -S tela-circle-icon-theme-all"
 )
 
 # Red y audio
@@ -333,7 +333,7 @@ else
 # Este es un archivo de configuración básico para bspwm
 
 # Establecer número de espacios de trabajo (desktops)
-bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+bspc monitor -d 1 2 3 4 5 
 
 # Configuración de bordes y espaciado
 bspc config border_width 2
