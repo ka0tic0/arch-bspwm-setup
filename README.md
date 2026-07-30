@@ -68,8 +68,8 @@
 #### Apariencia
 - `feh` (gestor de fondos de pantalla)
 - `lxappearance` (gestor de temas GTK)
-- `arc-gtk-theme` (tema GTK moderno)
-- `papirus-icon-theme` (iconos de alta calidad)
+- `archis-theme` (tema GTK moderno)
+- `tela-circle-icon-theme` (iconos de alta calidad)
 
 #### Red y Audio
 - `networkmanager`, `network-manager-applet` (gestión de red)
