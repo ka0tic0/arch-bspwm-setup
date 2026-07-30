@@ -404,12 +404,12 @@ super + {h,j,k,l}
     bspc node -f {west,south,north,east}
 
 # Cambiar enfoque entre espacios de trabajo
-super + {1-9,0}
-    bspc desktop -f '^{1-9,10}'
+super + {1-5}
+    bspc desktop -f '^{1-5}'
 
 # Mover ventana a espacio de trabajo
-super + shift + {1-9,0}
-    bspc node -d '^{1-9,10}'
+super + shift + {1-5}
+    bspc node -d '^{1-5}'
 
 # Expandir ventana
 super + ctrl + {h,j,k,l}
@@ -570,8 +570,9 @@ font-0 = "JetBrains Mono:pixelsize=10;1"
 font-1 = "Noto Sans:pixelsize=10;1"
 font-2 = "Nerd Font Symbols:pixelsize=12;2"
 
-modules-left = bspwm
-modules-right = date
+modules-left = arch bspwm
+modules-center = date
+modules-right = powermenu filesystem pulseaudio
 
 tray-position = right
 tray-padding = 2
@@ -580,21 +581,25 @@ tray-maxsize = 20
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+
+[module/arch]
+type = custom/text
+content = ""
+content-font = 2
+content-foreground = ${colors.primary}
+content-padding = 1
+
 [module/bspwm]
 type = internal/bspwm
 pin-workspaces = true
 enable-click = true
 
-ws-icon-0 = 1;❶
-ws-icon-1 = 2;❷
-ws-icon-2 = 3;❸
-ws-icon-3 = 4;❹
-ws-icon-4 = 5;❺
-ws-icon-5 = 6;❻
-ws-icon-6 = 7;❼
-ws-icon-7 = 8;❽
-ws-icon-8 = 9;❾
-ws-icon-9 = 10;❿
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;󰺄
+
 
 format = <label-state>
 label-focused = %icon%
@@ -616,6 +621,58 @@ interval = 60
 date = "%d-%m-%Y"
 time = "%H:%M"
 label = %date% %time%
+
+======================================
+MODULOS DERECHOS
+======================================
+[module/powermenu]
+type = custom/text
+content = ""
+content-font = 2
+content-foreground = ${colors.alert}
+# Cambiamos esta línea para que apunte a tu nuevo script
+# click-left = ~/.local/bin/powermenu.sh
+
+[module/filesystem]
+type = internal/fs
+mount-0 = /
+interval = 30
+
+# Bloque Amarillo
+format-mounted = <label-mounted>
+format-mounted-prefix = "󰋊 "
+format-mounted-background = ${colors.yellow}
+format-mounted-foreground = ${colors.module-text}
+format-mounted-padding = 1
+
+label-mounted = %percentage_used%%
+
+format-unmounted = <label-unmounted>
+format-unmounted-prefix = "󰋊 "
+format-unmounted-background = ${colors.alert}
+format-unmounted-foreground = ${colors.module-text}
+format-unmounted-padding = 1
+label-unmounted = %mountpoint% no montado
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+# Bloque Verde
+format-volume = <ramp-volume> <label-volume>
+format-volume-background = ${colors.green}
+format-volume-foreground = ${colors.module-text}
+format-volume-padding = 1
+
+label-volume = %percentage%%
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+label-muted = 󰖁 silenciado
+label-muted-background = ${colors.empty}
+label-muted-foreground = ${colors.module-text}
+label-muted-padding = 1
 
 EOF
     
